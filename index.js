@@ -24,7 +24,7 @@ app.use(express.static('/app'));
 
 app.get('/', function(req, res) {res.send({api: apiName, status: 'running'});});
 app.get('/settings', function(req, res) {logger.apiCalled(apiName, '/settings', 'GET', req.query, req.params, req.body); getSettingsDlg.getSettings().then(function(result) {res.send(result);});});
-app.get('/settings', function(req, res) {logger.apiCalled(apiName, '/settings', 'POST', req.query, req.params, req.body); putSettingsDlg.putSettings(req.body).then(function(result) {res.send(result);});});
+app.put('/settings', function(req, res) {logger.apiCalled(apiName, '/settings', 'PUT', req.query, req.params, req.body); putSettingsDlg.putSettings(req.body).then(function(result) {res.send(result);});});
 
 app.listen(8080, function() {
   console.log('Server Settings Microservice up and running');
