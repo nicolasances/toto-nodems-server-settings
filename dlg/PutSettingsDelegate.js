@@ -17,6 +17,8 @@ exports.putSettings = function(sett) {
 
         db.close();
 
+        success();
+
       });
 
     });
