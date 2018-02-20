@@ -17,11 +17,13 @@ exports.toSettingsTO = function(json) {
  */
 exports.update = function(settings) {
 
-  return {$set: {
-    env: settings.env,
-    apiUrl: settings.apiUrl,
-    jhash: settings.jhash
-  }};
+  var update = {};
+
+  if (settings.env != null) update.env = settings.env;
+  if (settings.apiUrl != null) update.apiUrl = settings.apiUrl;
+  if (settings.jhash != null) update.jhash = settings.jhash;
+
+  return {$set: update};
 }
 
 /**
