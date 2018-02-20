@@ -1,0 +1,30 @@
+swagger: '2.0'
+info:
+  description: This API updates the server settings info
+  title: Server Settings
+schemes:
+  - https
+paths:
+  /settings:
+    get:
+      summary: Get the list of server settings
+      description: 'Retrieves the list of server settings
+      operationId: GET Settings
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successful operation
+        '400':
+          description: Invalid status value
+
+definitions:
+  Setting:
+    type: object
+    properties:
+      env:
+        type: string
+      apiUrl:
+        type: string
+      jhash:
+        type: string
