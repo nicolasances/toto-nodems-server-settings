@@ -5,7 +5,9 @@ var MongoClient = mongo.MongoClient;
 
 var converter = require('../conv/SettingsConverter');
 
-exports.putSettings = function(sett) {
+exports.do = function(req) {
+
+  sett = req.body;
 
   return new Promise(function(success, failure) {
 
